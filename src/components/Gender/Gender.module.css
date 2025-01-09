@@ -1,0 +1,19 @@
+.sectionGender {}
+
+.wrapperGender {
+    gap: 40px;
+    padding: 72px 122px;
+}
+
+.wrapperGenderChoice {
+    display: flex;
+    gap: 117px;
+    justify-content: space-between;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
