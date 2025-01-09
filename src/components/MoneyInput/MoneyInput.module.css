@@ -1,0 +1,29 @@
+.wrapperMoneyInput {
+    padding: 73px 81px;
+    gap: 50px;
+}
+
+.wrapperMoney {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapperInputGroup {
+    display: flex;
+    height: 61px;
+    border: 1px solid #DDDCE0;
+    border-radius: 8px;
+    align-items: center;
+    padding: 20px 13px;
+}
+
+.inputGroupText {
+    color: var(--grey01);
+}
+
+.numberInput {
+    width: 100%;
+    border: none;
+    outline: none;
+}
