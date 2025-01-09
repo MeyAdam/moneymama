@@ -1,0 +1,9 @@
+.wrapperWhite {
+    background-color: var(--white);
+    margin: auto;
+    width: 942px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 28px;
+    box-shadow: 0 8px 37.4px 2px #00000012;
+}
