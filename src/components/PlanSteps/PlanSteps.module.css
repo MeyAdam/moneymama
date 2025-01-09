@@ -1,0 +1,18 @@
+.sectionPlanSteps {
+    background-color: var(--salmonRed);
+    padding: 58.5px 0;
+}
+
+.wrapperPlanSteps {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.heading {
+    color: var(--white);
+}
