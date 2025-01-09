@@ -1,0 +1,30 @@
+.sectionAgeInput {}
+
+.wrapperAgeInput {
+    padding: 78px 80px;
+    gap: 50px;
+}
+
+.wrapperAges {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapperInputValue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.rangeInput {
+    width: 100%;
+}
+
+.numberInput {
+    width: 106.41px;
+    padding: 14px 8.41px 14px 19px;
+    border-radius: 6px;
+    border: 1px solid var(--lightGrey);
+}
