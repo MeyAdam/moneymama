@@ -1,0 +1,33 @@
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 100px 0;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--grey03);
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 74px;
+}
+
+.socials {
+    display: flex;
+    gap: 32px;
+}
+
+.socials svg {
+    width: 32px;
+    height: 32px;
+}
