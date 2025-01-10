@@ -16,9 +16,15 @@ body {
   --white: #FFFFFF;
   --grey01: #6F6F6F;
   --grey02: #A5A5A5;
+  --grey03: #C1C1C1;
   --lightGrey: #DDDCE0;
   --yellow: #F8E15D;
   --salmonRed: #F8695F;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 input[type="range"] {
