@@ -1,0 +1,56 @@
+.wrapperTotalAccumulated {
+    padding: 73px 95px;
+    display: grid;
+    grid-template-columns: 1fr 1% 1fr;
+    row-gap: 87px;
+    /* align-items: center; */
+}
+
+.verticalLine {
+    width: 1px;
+    height: 137px;
+    background-color: var(--lightGrey);
+    justify-self: center;
+    align-self: center;
+}
+
+.boxEstimatedDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.boxEstimatedDetails:nth-child(1),
+.boxEstimatedDetails:nth-child(4) {
+    padding-right: 83px;
+}
+
+.boxEstimatedDetails:nth-child(3),
+.boxEstimatedDetails:nth-child(6) {
+    padding-left: 83px;
+}
+
+.title {
+    color: var(--grey01);
+}
+
+.wrapperInputGroup {
+    display: flex;
+    height: 61px;
+    border: 1px solid #DDDCE0;
+    border-radius: 8px;
+    align-items: center;
+    padding: 20px 13px;
+}
+
+.inputGroupText {
+    color: var(--grey01);
+}
+
+.investmentGrowthRate {
+    width: 100%;
+    border: none;
+    outline: none;
+}
