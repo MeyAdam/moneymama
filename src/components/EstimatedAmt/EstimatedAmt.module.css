@@ -1,0 +1,13 @@
+.sectionEstimatedAmt {}
+
+.wrapperEstimatedAmt {
+    background-color: var(--grey04);
+    padding: 68.5px 122.5px;
+    align-items: center;
+    gap: 23px;
+}
+
+.amount {
+    font-size: 96px;
+    font-weight: 800;
+}
