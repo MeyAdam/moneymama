@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const BtnYellow = () => {
+const BtnYellow = ({ text }) => {
   return (
-    <a href="/">
+    <a href="#">
       <button type="button" className="btnYellow">
-        BtnYellow
+        {text}
       </button>
     </a>
   );

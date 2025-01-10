@@ -10,6 +10,7 @@ import MoneyInput from "./components/MoneyInput/MoneyInput";
 import PercentageInput from "./components/PercentageInput/PercentageInput";
 import PlanSteps from "./components/PlanSteps/PlanSteps";
 import TotalAccumulated from "./components/TotalAccumulated/TotalAccumulated";
+import TotalAccumulatedDetails from "./components/TotalAccumulatedDetails/TotalAccumulatedDetails";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <PercentageInput />
       <EstimatedAmt />
       <TotalAccumulated />
+      <TotalAccumulatedDetails />
       <EmailReport />
       <Footer />
     </>

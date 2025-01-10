@@ -17,9 +17,14 @@ body {
   --grey01: #6F6F6F;
   --grey02: #A5A5A5;
   --grey03: #C1C1C1;
+  --grey04: #EEEFFF;
+  --grey05: #8CA2C0;
+  --grey06: #F7F8FF;
   --lightGrey: #DDDCE0;
   --yellow: #F8E15D;
   --salmonRed: #F8695F;
+  --blue: #0088FF;
+  --red: #FF0000;
 }
 
 a {
