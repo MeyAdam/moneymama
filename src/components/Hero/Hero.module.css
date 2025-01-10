@@ -1,6 +1,10 @@
 .sectionHero {
     min-height: 100svh;
     display: flex;
+    background-image: url("../../assets/hero-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
 }
 
 .wrapperHero {
@@ -11,4 +15,21 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    gap: 50px;
+}
+
+.description {
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--grey01);
+}
+
+@media (min-width: 1024px) {
+    .wrapperHero {
+        width: 964px;
+    }
+
+    .description {
+        width: 777px;
+    }
 }

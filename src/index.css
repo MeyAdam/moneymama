@@ -32,6 +32,16 @@ a {
   color: inherit;
 }
 
+h1 {
+  font-size: clamp(3rem, 1.6364rem + 6.8182vw, 6rem);
+  font-weight: 800;
+  line-height: clamp(3.5rem, 2.25rem + 6.25vw, 6.25rem);
+}
+
+p {
+  font-size: 20px;
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -78,4 +88,6 @@ input[type="number"]::-webkit-outer-spin-button {
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
 }
