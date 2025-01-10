@@ -1,0 +1,29 @@
+.sectionEmailReport {
+    background-color: var(--salmonRed);
+    padding: 128px 0;
+    color: var(--white);
+}
+
+.wrapperEmailReport {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 46px;
+}
+
+.wrapperEmail {
+    display: flex;
+    gap: 23px;
+    align-items: center;
+}
+
+.inputEmail {
+    width: 396px;
+    height: 60px;
+    padding: 17px 10px 17px 25px;
+    border-radius: 8px;
+    border: 1px solid var(--lightGrey);
+    outline: none;
+}
