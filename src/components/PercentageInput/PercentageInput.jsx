@@ -23,7 +23,7 @@ const PercentageInput = () => {
     <section className={css.sectionPercentageInput}>
       <WrapperWhite className={css.wrapperPercentageInput}>
         <div className={css.wrapperPercentage}>
-          <p>Savings rate</p>
+          <h3>Savings rate</h3>
           <div className={css.wrapperInputValue}>
             <input
               className={css.rangeInput}
@@ -53,7 +53,7 @@ const PercentageInput = () => {
           </div>
         </div>
         <div className={css.wrapperPercentage}>
-          <p>Pre-retirement investment return %</p>
+          <h3>Pre-retirement investment return %</h3>
           <div className={css.wrapperInputValue}>
             <input
               className={css.rangeInput}
@@ -83,7 +83,7 @@ const PercentageInput = () => {
           </div>
         </div>
         <div className={css.wrapperPercentage}>
-          <p>Post-retirement Investment return %</p>
+          <h3>Post-retirement Investment return %</h3>
           <div className={css.wrapperInputValue}>
             <input
               className={css.rangeInput}
