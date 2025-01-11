@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className={css.footer}>
       <div className={css.wrapper}>
-        <img src={logo2} alt="logo" width={300} />
+        <img src={logo2} alt="logo" className={css.logo} />
 
         <hr style={{ margin: "47px 0", border: "1px solid var(--grey03)" }} />
 
