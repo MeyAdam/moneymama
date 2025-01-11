@@ -31,14 +31,11 @@ const MoneyInput = () => {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "10px" }}
           >
-            <p>Your expected monthly expense upon retirement</p>
+            <h3>Your expected monthly expense upon retirement</h3>
             <p style={{ color: "var(--grey02)" }}>Based on today's value</p>
           </div>
           <div className={css.wrapperInputGroup}>
-            <span className={css.inputGroupText}>RM</span>
-            <span style={{ padding: "0 10px", color: "var(--lightGrey)" }}>
-              |
-            </span>
+            <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
               type="number"
@@ -51,12 +48,9 @@ const MoneyInput = () => {
         </div>
 
         <div className={css.wrapperMoney}>
-          <p>Current monthly gross income</p>
+          <h3>Current monthly gross income</h3>
           <div className={css.wrapperInputGroup}>
-            <span className={css.inputGroupText}>RM</span>
-            <span style={{ padding: "0 10px", color: "var(--lightGrey)" }}>
-              |
-            </span>
+            <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
               type="number"
@@ -69,12 +63,9 @@ const MoneyInput = () => {
         </div>
 
         <div className={css.wrapperMoney}>
-          <p>Current EPF balance</p>
+          <h3>Current EPF balance</h3>
           <div className={css.wrapperInputGroup}>
-            <span className={css.inputGroupText}>RM</span>
-            <span style={{ padding: "0 10px", color: "var(--lightGrey)" }}>
-              |
-            </span>
+            <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
               type="number"
@@ -90,17 +81,14 @@ const MoneyInput = () => {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "10px" }}
           >
-            <p>Current savings</p>
+            <h3>Current savings</h3>
             <p style={{ color: "var(--grey02)" }}>
               (Fixed deposits, PRS, stocks, gold, cryptocurrencies, rental
               income, etc)
             </p>
           </div>
           <div className={css.wrapperInputGroup}>
-            <span className={css.inputGroupText}>RM</span>
-            <span style={{ padding: "0 10px", color: "var(--lightGrey)" }}>
-              |
-            </span>
+            <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
               type="number"

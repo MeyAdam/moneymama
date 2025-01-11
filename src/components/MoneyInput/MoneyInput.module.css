@@ -1,5 +1,9 @@
+p {
+    font-weight: 500;
+}
+
 .wrapperMoneyInput {
-    padding: 73px 81px;
+    padding: 50px 20px;
     gap: 50px;
 }
 
@@ -11,19 +15,38 @@
 
 .wrapperInputGroup {
     display: flex;
-    height: 61px;
     border: 1px solid #DDDCE0;
     border-radius: 8px;
     align-items: center;
-    padding: 20px 13px;
+    padding: 12px 15px;
+    gap: 30px;
 }
 
 .inputGroupText {
     color: var(--grey01);
+    font-weight: 600;
+    position: relative;
+}
+
+.inputGroupText::before {
+    content: "";
+    display: flex;
+    height: 100%;
+    width: 1px;
+    background-color: var(--lightGrey);
+    position: absolute;
+    left: 45px;
 }
 
 .numberInput {
     width: 100%;
     border: none;
     outline: none;
+}
+
+@media (min-width: 768px) {
+    .wrapperMoneyInput {
+        padding: 73px 81px;
+        gap: 50px;
+    }
 }
