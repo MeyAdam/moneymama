@@ -21,7 +21,7 @@ const AgeInput = () => {
     <section className={css.sectionAgeInput}>
       <WrapperWhite className={css.wrapperAgeInput}>
         <div className={css.wrapperAges}>
-          <p>Your current age</p>
+          <h3>Your current age</h3>
           <div className={css.wrapperInputValue}>
             <input
               className={css.rangeInput}
@@ -49,7 +49,7 @@ const AgeInput = () => {
           </div>
         </div>
         <div className={css.wrapperAges}>
-          <p>Age you would like to retire at</p>
+          <h3>Age you would like to retire at</h3>
           <div className={css.wrapperInputValue}>
             <input
               className={css.rangeInput}
@@ -77,8 +77,8 @@ const AgeInput = () => {
           </div>
         </div>
         <div className={css.wrapperAges}>
-          <p>Life expectancy</p>
-          <p style={{ color: "var(--grey02)" }}>
+          <h3>Life expectancy</h3>
+          <p style={{ color: "var(--grey02)", fontWeight: "500" }}>
             Male: 73 years old , Female: 77.8 years (data extracted from DOSM)
           </p>
           <div className={css.wrapperInputValue}>

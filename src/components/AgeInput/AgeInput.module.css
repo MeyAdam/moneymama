@@ -1,7 +1,7 @@
 .sectionAgeInput {}
 
 .wrapperAgeInput {
-    padding: 78px 80px;
+    padding: 50px 20px;
     gap: 50px;
 }
 
@@ -24,7 +24,13 @@
 
 .numberInput {
     width: 106.41px;
-    padding: 14px 8.41px 14px 19px;
+    padding: 10px 5px 10px 10px;
     border-radius: 6px;
     border: 1px solid var(--lightGrey);
+}
+
+@media (min-width: 768px) {
+    .wrapperAgeInput {
+        padding: 78px 80px;
+    }
 }
