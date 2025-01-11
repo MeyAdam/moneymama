@@ -1,9 +1,15 @@
 .wrapperWhite {
     background-color: var(--white);
     margin: auto;
-    width: 942px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     border-radius: 28px;
     box-shadow: 0 8px 37.4px 2px #00000012;
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapperWhite {
+        width: 942px;
+    }
 }
