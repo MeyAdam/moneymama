@@ -8,7 +8,7 @@ const Gender = () => {
   return (
     <section className={css.sectionGender}>
       <WrapperWhite className={css.wrapperGender}>
-        <h3 className={css.title}>What's your gender?</h3>
+        <h3>What's your gender?</h3>
         <div className={css.wrapperGenderChoice}>
           <div className={css.gender}>
             <img src={imgMen} alt="Man" />
