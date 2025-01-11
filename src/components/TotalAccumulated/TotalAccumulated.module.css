@@ -1,35 +1,19 @@
 .wrapperTotalAccumulated {
-    padding: 73px 95px;
+    padding: 50px 20px;
     display: grid;
-    grid-template-columns: 1fr 1% 1fr;
-    row-gap: 87px;
-    /* align-items: center; */
-}
-
-.verticalLine {
-    width: 1px;
-    height: 137px;
-    background-color: var(--lightGrey);
-    justify-self: center;
-    align-self: center;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
 }
 
 .boxEstimatedDetails {
     display: flex;
     flex-direction: column;
     gap: 17px;
-    align-items: flex-start;
-    padding: 20px 0;
 }
 
-.boxEstimatedDetails:nth-child(1),
-.boxEstimatedDetails:nth-child(4) {
-    padding-right: 83px;
-}
-
-.boxEstimatedDetails:nth-child(3),
-.boxEstimatedDetails:nth-child(6) {
-    padding-left: 83px;
+.amount {
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .title {
@@ -38,19 +22,79 @@
 
 .wrapperInputGroup {
     display: flex;
-    height: 61px;
     border: 1px solid #DDDCE0;
     border-radius: 8px;
     align-items: center;
-    padding: 20px 13px;
+    padding: 15px;
+    gap: 30px;
 }
 
 .inputGroupText {
     color: var(--grey01);
+    font-weight: 600;
+    position: relative;
+}
+
+.inputGroupText::before {
+    content: "";
+    display: flex;
+    height: 100%;
+    width: 1px;
+    background-color: var(--lightGrey);
+    position: absolute;
+    left: 35px;
 }
 
 .investmentGrowthRate {
     width: 100%;
     border: none;
     outline: none;
+}
+
+@media (min-width: 768px) {
+    .wrapperTotalAccumulated {
+        padding: 73px 95px;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 108px;
+    }
+
+    .boxEstimatedDetails {
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+
+    .boxEstimatedDetails:nth-child(1),
+    .boxEstimatedDetails:nth-child(3) {
+        padding-right: 50px;
+        position: relative;
+    }
+
+    .boxEstimatedDetails:nth-child(1)::before,
+    .boxEstimatedDetails:nth-child(3)::before {
+        content: "";
+        display: flex;
+        height: 137px;
+        width: 1px;
+        background-color: var(--lightGrey);
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .boxEstimatedDetails:nth-child(2),
+    .boxEstimatedDetails:nth-child(4) {
+        padding-left: 50px;
+    }
+}
+
+@media (min-width: 820px) {
+    .boxEstimatedDetails:nth-child(1),
+    .boxEstimatedDetails:nth-child(3) {
+        padding-right: 83px;
+    }
+
+    .boxEstimatedDetails:nth-child(2),
+    .boxEstimatedDetails:nth-child(4) {
+        padding-left: 83px;
+    }
 }
