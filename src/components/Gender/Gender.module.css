@@ -1,19 +1,48 @@
+img {
+    width: 100%;
+}
+
 .sectionGender {}
 
 .wrapperGender {
     gap: 40px;
-    padding: 72px 122px;
+    padding: 50px 20px;
+}
+
+.title {
+    font-size: 24px;
+    line-height: 34px;
 }
 
 .wrapperGenderChoice {
-    display: flex;
-    gap: 117px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     justify-content: space-between;
 }
 
 .gender {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     text-align: center;
+}
+
+.gender p {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    .wrapperGender {
+        padding: 70px 120px;
+    }
+
+    .wrapperGenderChoice {
+        gap: 117px;
+    }
+
+    .gender {
+        gap: 30px;
+    }
 }
