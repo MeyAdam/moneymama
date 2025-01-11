@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaBars } from "react-icons/fa";
 import logo from "../../assets/MONEYMAMA-logo.svg";
 import css from "./Header.module.css";
-import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header className={css.header}>
       <div className={css.wrapper}>
-        <img src={logo} alt="logo" className={css.logo} />
-        <nav>
+        <a href="/" style={{ display: "flex" }}>
+          <img src={logo} alt="logo" className={css.logo} />
+        </a>
+        <div
+          className={css.hamburger}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation"
+        >
+          <FaBars className={css.mobileMenu} />
+        </div>
+        <nav
+          className={classNames(css.navLinks, `${isOpen ? css.open : ""}`)}
+          onClick={() => setIsOpen(false)}
+        >
           <ul className={css.navList}>
             <li>
-              <a href="/about">About</a>
+              <a href="#">About</a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a href="#">Contact</a>
             </li>
           </ul>
         </nav>
