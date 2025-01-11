@@ -6,9 +6,15 @@ const EmailReport = () => {
   return (
     <section className={css.sectionEmailReport}>
       <div className={css.wrapperEmailReport}>
-        <h2>Get your report direct to your inbox</h2>
+        <h2 style={{ textAlign: "center" }}>
+          Get your report direct to your inbox
+        </h2>
         <div className={css.wrapperEmail}>
-          <input type="email" placeholder="Enter email" className={css.inputEmail} />
+          <input
+            type="email"
+            placeholder="Enter email"
+            className={css.inputEmail}
+          />
           <BtnYellow text="Get my report" />
         </div>
       </div>
