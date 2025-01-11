@@ -1,6 +1,6 @@
 .sectionPlanSteps {
     background-color: var(--salmonRed);
-    padding: 58.5px 0;
+    padding: 50px 0;
 }
 
 .wrapperPlanSteps {
@@ -11,8 +11,67 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    gap: 72px;
 }
 
 .heading {
     color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.desc {
+    font-weight: 600;
+    color: var(--grey07);
+}
+
+.wrapperSteps {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.wrapperSteps::before {
+    content: "";
+    position: absolute;
+    background-color: var(--lightGrey);
+    width: 99%;
+    height: 2px;
+    position-area: center;
+    z-index: -1;
+}
+
+.step {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #C9615A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step p,
+.step svg {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.step.active {
+    background-color: var(--yellow);
+}
+
+.step.active p,
+.step.active svg {
+    color: var(--purple);
+}
+
+@media (min-width: 768px) {
+    .wrapperSteps {
+        width: 500px;
+    }
 }
