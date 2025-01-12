@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./AgeInput.module.css";
 
-const AgeInput = () => {
-  const [currentAge, setCurrentAge] = useState(25);
-  const [retiredAge, setRetiredAge] = useState(55);
-  const [lifeExpectancy, setLifeExpectancy] = useState(80);
-
+const AgeInput = ({
+  currentAge,
+  setCurrentAge,
+  retiredAge,
+  setRetiredAge,
+  lifeExpectancy,
+  setLifeExpectancy,
+}) => {
   const handleAgeChange = (e) => {
     setCurrentAge(Number(e.target.value));
   };

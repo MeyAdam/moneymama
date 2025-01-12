@@ -12,7 +12,13 @@ import Personal from "./pages/Personal/Personal";
 
 const App = () => {
   const [selectedGender, setSelectedGender] = useState(null);
+  const [currentAge, setCurrentAge] = useState(25);
+  const [retiredAge, setRetiredAge] = useState(55);
+  const [lifeExpectancy, setLifeExpectancy] = useState(80);
   console.log("selectedGender", selectedGender);
+  console.log("currentAge", currentAge);
+  console.log("retiredAge", retiredAge);
+  console.log("lifeExpectancy", lifeExpectancy);
 
   return (
     <>
@@ -24,6 +30,12 @@ const App = () => {
           <Personal
             selectedGender={selectedGender}
             setSelectedGender={setSelectedGender}
+            currentAge={currentAge}
+            setCurrentAge={setCurrentAge}
+            retiredAge={retiredAge}
+            setRetiredAge={setRetiredAge}
+            lifeExpectancy={lifeExpectancy}
+            setLifeExpectancy={setLifeExpectancy}
           />
           <MoneyPercentage />
           <Estimation />
