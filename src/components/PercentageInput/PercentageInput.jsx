@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./PercentageInput.module.css";
 
-const PercentageInput = () => {
-  const [savingsRate, setSavingsRate] = useState(85.38);
-  const [preInvestmentReturn, setPreInvestmentReturn] = useState(50);
-  const [postInvestmentReturn, setPostInvestmentReturn] = useState(17.56);
-
+const PercentageInput = ({
+  savingsRate,
+  setSavingsRate,
+  preInvestmentReturn,
+  setPreInvestmentReturn,
+  postInvestmentReturn,
+  setPostInvestmentReturn,
+}) => {
   const handleSavingsRateChange = (e) => {
     setSavingsRate(e.target.value);
   };

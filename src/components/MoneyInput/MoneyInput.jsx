@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./MoneyInput.module.css";
 
-const MoneyInput = () => {
-  const [expectedMonthlyExpense, setExpectedMonthlyExpense] = useState(3500);
-  const [currentGrossIncome, setCurrentGrossIncome] = useState(8350);
-  const [currentEPF, setCurrentEPF] = useState(44500);
-  const [currentSavings, setCurrentSavings] = useState(3500);
-
+const MoneyInput = ({
+  expectedMonthlyExpense,
+  setExpectedMonthlyExpense,
+  currentGrossIncome,
+  setCurrentGrossIncome,
+  currentEPF,
+  setCurrentEPF,
+  currentSavings,
+  setCurrentSavings,
+}) => {
+  // Handler functions for input changes
   const handleExpectedMonthlyExpenseChange = (e) => {
     setExpectedMonthlyExpense(Number(e.target.value));
   };
@@ -41,6 +46,7 @@ const MoneyInput = () => {
               type="number"
               name="expectedMonthlyExpense"
               min="0"
+              step={0.01}
               value={expectedMonthlyExpense}
               onChange={handleExpectedMonthlyExpenseChange}
             />
@@ -56,6 +62,7 @@ const MoneyInput = () => {
               type="number"
               name="currentGrossIncome"
               min="0"
+              step={0.01}
               value={currentGrossIncome}
               onChange={handleCurrentGrossIncomeChange}
             />
@@ -71,6 +78,7 @@ const MoneyInput = () => {
               type="number"
               name="currentEPF"
               min="0"
+              step={0.01}
               value={currentEPF}
               onChange={handleCurrentEPFChange}
             />
@@ -94,6 +102,7 @@ const MoneyInput = () => {
               type="number"
               name="currentSavings"
               min="0"
+              step={0.01}
               value={currentSavings}
               onChange={handleCurrentSavingsChange}
             />

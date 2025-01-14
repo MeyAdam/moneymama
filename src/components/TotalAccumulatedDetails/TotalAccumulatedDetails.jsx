@@ -2,7 +2,12 @@ import classNames from "classnames";
 import React from "react";
 import css from "./TotalAccumulatedDetails.module.css";
 
-const TotalAccumulatedDetails = () => {
+const TotalAccumulatedDetails = ({
+  retirementGoal,
+  currentSavings,
+  projectedSaving,
+  shortAmt,
+}) => {
   return (
     <section className={css.sectionTotalAccumulatedDetails}>
       <div className={css.wrapperTotalAccumulatedDetails}>
@@ -11,7 +16,7 @@ const TotalAccumulatedDetails = () => {
             <p>Total accumulated</p>
             <div className={css.wrapperGoal}>
               <p style={{ color: "var(--grey01)" }}>Retirement Goal</p>
-              <p>RM1,600,000</p>
+              <p>RM{retirementGoal}</p>
             </div>
           </div>
         </div>
@@ -40,7 +45,7 @@ const TotalAccumulatedDetails = () => {
               ></div>
               <p>Current Savings</p>
             </div>
-            <p>RM80,000</p>
+            <p>RM{currentSavings}</p>
           </div>
 
           <div className={css.boxDetail}>
@@ -51,7 +56,7 @@ const TotalAccumulatedDetails = () => {
               ></div>
               <p>Projected Savings</p>
             </div>
-            <p>RM990,700</p>
+            <p>RM{projectedSaving}</p>
           </div>
 
           <div className={css.boxDetail}>
@@ -62,7 +67,7 @@ const TotalAccumulatedDetails = () => {
               ></div>
               <p>Shortage</p>
             </div>
-            <p>RM250,300</p>
+            <p>RM{shortAmt}</p>
           </div>
         </div>
       </div>
