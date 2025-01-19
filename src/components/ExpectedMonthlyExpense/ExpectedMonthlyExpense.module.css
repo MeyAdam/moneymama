@@ -1,9 +1,9 @@
-.wrapperMoneyInput {
+.wrapperExpectedMonthlyExpense {
     padding: 50px 20px;
     gap: 50px;
 }
 
-.wrapperMoney {
+.wrapperInput {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -16,17 +16,6 @@
     align-items: center;
     padding: 12px 15px;
     gap: 30px;
-}
-
-.wrapperInputValue {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-.rangeInput {
-    width: 100%;
 }
 
 .inputGroupText {
@@ -45,37 +34,14 @@
     left: 45px;
 }
 
-.rangeNumberInput {
-    width: 106.41px;
-    padding: 10px 5px 10px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--lightGrey);
-}
-
 .numberInput {
     width: 100%;
     border: none;
     outline: none;
 }
 
-.circleQuestion {
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--black);
-    border-radius: 50%;
-    font-size: 8px;
-    font-weight: 500;
-    text-align: center;
-    color: var(--black);
-    background-color: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
 @media (min-width: 768px) {
-    .wrapperMoneyInput {
+    .wrapperExpectedMonthlyExpense {
         padding: 73px 81px;
         gap: 50px;
     }

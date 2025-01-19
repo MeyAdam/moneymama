@@ -80,9 +80,15 @@ const AgeInput = ({
           </div>
         </div>
         <div className={css.wrapperAges}>
-          <h3>Life expectancy</h3>
-          <p style={{ color: "var(--grey02)", fontWeight: "500" }}>
-            Male: 73 years old , Female: 77.8 years (data extracted from DOSM)
+          <h3>Age you expect to live until</h3>
+          <p
+            style={{
+              color: "var(--grey02)",
+              fontWeight: "500",
+              fontSize: "14px",
+            }}
+          >
+            The average life expectancy is 75.2 years. Enter your estimate.
           </p>
           <div className={css.wrapperInputValue}>
             <input

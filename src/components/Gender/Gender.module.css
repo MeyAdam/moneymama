@@ -5,13 +5,12 @@ img {
 .sectionGender {}
 
 .wrapperGender {
-    gap: 40px;
-    padding: 50px 20px;
+    padding: 1.875rem 1.25rem;
 }
 
 .wrapperGenderChoice {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+    display: flex;
     gap: 20px;
     justify-content: space-between;
 }
@@ -19,33 +18,47 @@ img {
 .gender {
     display: flex;
     flex-direction: column;
+    width: calc(100%/2);
     gap: 10px;
     text-align: center;
     cursor: pointer;
+    justify-content: space-between;
 }
 
 .gender.selected {
-    background-color: var(--yellow);
-    padding: 20px;
+    background-color: rgba(248 105 95 / 10%);
+    padding: 0.313rem;
     border-radius: 20px;
     transition: all;
 }
 
 .gender p {
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 600;
 }
 
 @media (min-width: 768px) {
     .wrapperGender {
-        padding: 70px 120px;
+        padding: 3.125rem 5rem;
     }
 
     .wrapperGenderChoice {
-        gap: 117px;
+        /* gap: 6.25rem; */
     }
 
     .gender {
         gap: 30px;
+        width: 250px;
+    }
+
+    .gender img {
+        width: 250px;
+    }
+
+    .gender.selected {
+        padding: 0.938rem;
+    }
+
+    .gender p {
+        font-size: 1.25rem;
     }
 }

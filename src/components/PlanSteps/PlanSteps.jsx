@@ -22,9 +22,6 @@ const PlanSteps = () => {
             <p>2</p>
           </div>
           <div className={css.step}>
-            <p>3</p>
-          </div>
-          <div className={css.step}>
             <FaCheck />
           </div>
         </div>

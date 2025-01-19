@@ -1,0 +1,91 @@
+.wrapperConclusions {
+    background-color: var(--white);
+    width: 90%;
+    margin: auto;
+    padding: 50px 20px;
+    border-radius: 28px;
+    box-shadow: 0 8px 37.4px 2px #00000012;
+}
+
+.wrapper1 {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text {
+    text-align: center;
+    color: var(--grey01);
+}
+
+.wrapperRetirementGoal {
+    background-color: var(--grey06);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.wrapperRetirementGoal,
+.wrapperMonthlySave {
+    /* width: calc(100%/2); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.wrapper2 {
+    margin-top: 50px;
+}
+
+.wrapperInvestmentGrowthRate {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapperInputValue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.rangeInput {
+    width: 100%;
+}
+
+.numberInput {
+    width: 106.41px;
+    padding: 10px 5px 10px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--lightGrey);
+}
+
+@media (min-width: 768px) {
+    .wrapperConclusions {
+        padding: 70px 80px;
+    }
+
+    .wrapper1 {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .wrapperRetirementGoal,
+    .wrapperMonthlySave {
+        width: calc(100%/2);
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapperConclusions {
+        width: 830px;
+    }
+}

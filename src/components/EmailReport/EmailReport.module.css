@@ -1,6 +1,6 @@
 .sectionEmailReport {
     background-color: var(--salmonRed);
-    padding: 100px 0;
+    padding: 50px 0;
     color: var(--white);
 }
 
@@ -32,8 +32,14 @@
 }
 
 @media (min-width: 768px) {
+    .sectionEmailReport {
+        padding: 100px 0;
+    }
     .wrapperEmail {
         flex-direction: row;
         width: 619px;
+    }
+    .inputEmail {
+        width: 60%;
     }
 }

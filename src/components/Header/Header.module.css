@@ -74,12 +74,14 @@
 
     .navList {
         flex-direction: row;
-        gap: 4rem;
+        gap: 50px;
     }
 }
 
 @media (min-width: 1024px) {
-    .navList {
-        gap: 115px;
+    .wrapper {
+        width: 1000px;
+        height: 130px;
+        padding: 0;
     }
 }

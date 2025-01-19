@@ -4,8 +4,6 @@ import BtnYellow from "../../components/BtnYellow/BtnYellow";
 import Gender from "../../components/Gender/Gender";
 
 const Personal = ({
-  selectedGender,
-  setSelectedGender,
   currentAge,
   setCurrentAge,
   retiredAge,
@@ -15,10 +13,6 @@ const Personal = ({
 }) => {
   return (
     <>
-      <Gender
-        selectedGender={selectedGender}
-        setSelectedGender={setSelectedGender}
-      />
       <AgeInput
         currentAge={currentAge}
         setCurrentAge={setCurrentAge}

@@ -11,7 +11,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    gap: 72px;
+    gap: 50px;
 }
 
 .heading {
@@ -22,8 +22,7 @@
 }
 
 .desc {
-    font-weight: 600;
-    color: var(--grey07);
+    color: var(--grey06);
 }
 
 .wrapperSteps {
@@ -38,7 +37,7 @@
 .wrapperSteps::before {
     content: "";
     position: absolute;
-    background-color: var(--lightGrey);
+    background-color: #C9615A;
     width: 99%;
     height: 2px;
     position-area: center;
@@ -46,8 +45,8 @@
 }
 
 .step {
-    width: 50px;
-    height: 50px;
+    width: 49px;
+    height: 49px;
     border-radius: 50%;
     background-color: #C9615A;
     display: flex;
@@ -58,7 +57,7 @@
 .step p,
 .step svg {
     color: var(--white);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .step.active {
@@ -67,11 +66,21 @@
 
 .step.active p,
 .step.active svg {
-    color: var(--purple);
+    color: var(--black);
+}
+
+@media (min-width: 375px) {
+    .wrapperSteps {
+        width: 305px;
+    }
 }
 
 @media (min-width: 768px) {
-    .wrapperSteps {
-        width: 500px;
+    .wrapperPlanSteps {
+        width: 700px;
+    }
+
+    .step p {
+        font-size: 1.25rem;
     }
 }

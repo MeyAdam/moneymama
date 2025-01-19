@@ -6,7 +6,7 @@ const EstimatedAmt = ({ retirementGoal, setRetirementGoal }) => {
   return (
     <section className={css.sectionEstimatedAmt}>
       <WrapperWhite className={css.wrapperEstimatedAmt}>
-        <p className={css.title}>Estimated amount you need to retire</p>
+        <h3 className={css.title}>Estimated amount you need to retire</h3>
         <p className={css.amount}>RM{retirementGoal.toLocaleString()}</p>
       </WrapperWhite>
     </section>

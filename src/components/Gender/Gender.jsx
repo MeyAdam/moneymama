@@ -1,6 +1,6 @@
 import React from "react";
-import imgMen from "../../assets/imgMen.png";
-import imgWomen from "../../assets/imgWomen.png";
+import imgMan from "../../assets/man.png";
+import imgWoman from "../../assets/woman.png";
 import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./Gender.module.css";
 
@@ -20,7 +20,7 @@ const Gender = ({ selectedGender, setSelectedGender }) => {
             }`}
             onClick={() => handleSelectedGender("Man")}
           >
-            <img src={imgMen} alt="Man" />
+            <img src={imgMan} alt="Man" />
             <p>Man</p>
           </div>
           <div
@@ -29,7 +29,7 @@ const Gender = ({ selectedGender, setSelectedGender }) => {
             }`}
             onClick={() => handleSelectedGender("Woman")}
           >
-            <img src={imgWomen} alt="Woman" />
+            <img src={imgWoman} alt="Woman" />
             <p>Woman</p>
           </div>
         </div>

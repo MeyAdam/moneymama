@@ -11,21 +11,17 @@ const Footer = () => {
       <div className={css.wrapper}>
         <img src={logo2} alt="logo" className={css.logo} />
 
-        <hr style={{ margin: "47px 0", border: "1px solid var(--grey03)" }} />
+        <hr
+          style={{
+            width: "100%",
+            margin: "47px 0",
+            border: "1px solid var(--grey03)",
+          }}
+        />
 
         <div className={css.columns}>
           <div className={css.copyright}>
             <p>© {currentYear} MoneyMama. All rights reserved</p>
-          </div>
-          <div className={css.navLinks}>
-            <ul className={css.navList}>
-              <li>
-                <a href="/about">About</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-            </ul>
           </div>
           <div className={css.socials}>
             <a href="#">
@@ -40,6 +36,16 @@ const Footer = () => {
             <a href="#">
               <FaLinkedin />
             </a>
+          </div>
+          <div className={css.navLinks}>
+            <ul className={css.navList}>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

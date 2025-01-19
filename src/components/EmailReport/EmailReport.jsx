@@ -6,7 +6,7 @@ const EmailReport = () => {
   return (
     <section className={css.sectionEmailReport}>
       <div className={css.wrapperEmailReport}>
-        <h2 style={{ textAlign: "center" }}>
+        <h2 style={{ textAlign: "center", fontSize: "28px" }}>
           Get your report direct to your inbox
         </h2>
         <div className={css.wrapperEmail}>
@@ -15,7 +15,7 @@ const EmailReport = () => {
             placeholder="Enter email"
             className={css.inputEmail}
           />
-          <BtnYellow text="Get my report" />
+          <BtnYellow text="Get my report" className={css.btnYellowAdd} />
         </div>
       </div>
     </section>

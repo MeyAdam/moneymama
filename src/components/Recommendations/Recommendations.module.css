@@ -1,0 +1,141 @@
+.sectionRecommendations {
+    background-color: var(--white);
+    padding: 50px 0 100px;
+    margin-top: 50px;
+}
+
+.wrapperRecommendations {
+    width: 90%;
+    margin: auto;
+}
+
+.boxRecommendations {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.recommendation {
+    border-radius: 28px;
+    box-shadow: 0 8px 37.4px 2px #00000012;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 40px 20px 0 20px;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.desc {
+    color: var(--grey01);
+}
+
+ul {
+    padding-left: 25px;
+}
+
+ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.risk {
+    font-size: 16px;
+    color: var(--grey01);
+}
+
+.percentage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--grey06);
+    padding: 20px 20px 40px 20px;
+    border-radius: 0 0 28px 28px;
+}
+
+.percentage p {
+    text-align: center;
+}
+
+.number {
+    font-size: clamp(2.4375rem, 1.3214rem + 5.5804vw, 4rem);
+    font-weight: 800;
+}
+
+.percentageText {
+    font-size: 16px;
+    color: var(--grey01);
+    font-weight: 400;
+}
+
+.licensedAdvisor {
+    width: 100%;
+    border-radius: 0 0 28px 28px;
+}
+
+@media (min-width: 768px) {
+    
+    .text {
+        padding: 50px 20px 0 50px;
+    }
+
+    .percentage {
+        padding: 50px;
+    }
+
+    .licensedAdvisor {
+        height: 300px;
+        object-fit: cover;
+        object-position: 50% -130px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sectionRecommendations {
+        margin-top: 100px;
+    }
+
+    .recommendation {
+        width: 90%;
+        margin: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .text {
+        padding: 50px 0 50px 50px;
+    }
+
+    .percentage {
+        width: 400px;
+        border-radius: 0 28px 28px 0;
+    }
+
+    .licensedAdvisorText {
+        max-width: 600px;
+    }
+
+    .licensedAdvisor {
+        height: unset;
+        width: 400px;
+        object-position: center;
+        border-radius: 0 28px 28px 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    .recommendation {
+        width: 60%;
+        margin: auto;
+    }
+}
