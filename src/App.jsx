@@ -1,43 +1,38 @@
 import React, { useState } from "react";
+import AgeInput from "./components/AgeInput/AgeInput";
+import BtnOutline from "./components/BtnOutline/BtnOutline";
+import BtnYellow from "./components/BtnYellow/BtnYellow";
+import Conclusion from "./components/Conclusion/Conclusion";
 import EmailReport from "./components/EmailReport/EmailReport";
+import ExpectedMonthlyExpense from "./components/ExpectedMonthlyExpense/ExpectedMonthlyExpense";
 import Footer from "./components/Footer/Footer";
+import Gender from "./components/Gender/Gender";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
-import PlanSteps from "./components/PlanSteps/PlanSteps";
-import Sections from "./components/Sections/Sections";
-import TotalAccumulatedDetails from "./components/TotalAccumulatedDetails/TotalAccumulatedDetails";
-import Estimation from "./pages/Estimation/Estimation";
-import MoneyPercentage from "./pages/MoneyPercentage/MoneyPercentage";
-import Personal from "./pages/Personal/Personal";
-import Gender from "./components/Gender/Gender";
-import AgeInput from "./components/AgeInput/AgeInput";
-import BtnYellow from "./components/BtnYellow/BtnYellow";
 import MoneyInput from "./components/MoneyInput/MoneyInput";
-import PercentageInput from "./components/PercentageInput/PercentageInput";
-import EstimatedAmt from "./components/EstimatedAmt/EstimatedAmt";
-import TotalAccumulated from "./components/TotalAccumulated/TotalAccumulated";
-import BtnOutline from "./components/BtnOutline/BtnOutline";
-import ExpectedMonthlyExpense from "./components/ExpectedMonthlyExpense/ExpectedMonthlyExpense";
-import Conclusion from "./components/Conclusion/Conclusion";
+import PlanSteps from "./components/PlanSteps/PlanSteps";
 import Recommendations from "./components/Recommendations/Recommendations";
-import css from "./App.module.css";
 
 const App = () => {
-  const [selectedGender, setSelectedGender] = useState(null);
-  const [currentAge, setCurrentAge] = useState(25);
-  const [retiredAge, setRetiredAge] = useState(55);
-  const [lifeExpectancy, setLifeExpectancy] = useState(80);
-  const [expectedMonthlyExpense, setExpectedMonthlyExpense] = useState(3500);
-  const [currentGrossIncome, setCurrentGrossIncome] = useState(8350);
-  const [currentEPF, setCurrentEPF] = useState(44500);
-  const [currentSavings, setCurrentSavings] = useState(3500);
-  const [savingsRate, setSavingsRate] = useState(85.38);
-  const [preInvestmentReturn, setPreInvestmentReturn] = useState(50);
-  const [postInvestmentReturn, setPostInvestmentReturn] = useState(17.56);
-  const [retirementGoal, setRetirementGoal] = useState(1600001);
-  const [projectedSaving, setProjectedSaving] = useState(990700);
-  const [shortAmt, setShortAmt] = useState(250300);
-  const [saveMonthly, setSaveMonthly] = useState(1200);
+  const [activeSection, setActiveSection] = useState("gettingToKnowYou");
+
+  const [theData, setTheData] = useState({
+    selectedGender: null,
+    currentAge: 25,
+    retiredAge: 55,
+    lifeExpectancy: 80,
+    currentGrossIncome: 8350,
+    currentEPF: 44500,
+    currentSavings: 3500,
+    averageSavingsInvestment: 3.9,
+    expectedMonthlyExpense: 3500,
+    adjustedInvestmentGrowthRate: 3.12,
+  });
+  console.log("theData", theData);
+
+  const handleSectionChange = (sectionId) => {
+    setActiveSection(sectionId);
+  };
 
   return (
     <>
@@ -45,10 +40,15 @@ const App = () => {
       <main>
         <Hero />
         <PlanSteps />
-        <div style={{ margin: "100px 0" }}>
-          <div
-            id="getting-to-know-you"
-            style={{ display: "flex", flexDirection: "column", gap: "50px" }}
+        <div style={{ marginTop: "100px" }}>
+          <section
+            id="gettingToKnowYou"
+            style={{
+              display: activeSection === "gettingToKnowYou" ? "flex" : "none",
+              flexDirection: "column",
+              gap: "50px",
+              marginBottom: "100px",
+            }}
           >
             <h2
               style={{
@@ -57,26 +57,45 @@ const App = () => {
                 fontWeight: "500",
               }}
             >
-              Step 1: Getting to know you
+              Step 1: Getting to Know You
             </h2>
             <Gender
-              selectedGender={selectedGender}
-              setSelectedGender={setSelectedGender}
+              selectedGender={theData.selectedGender}
+              setSelectedGender={(gender) =>
+                setTheData((prev) => ({ ...prev, selectedGender: gender }))
+              }
             />
             <AgeInput
-              currentAge={currentAge}
-              setCurrentAge={setCurrentAge}
-              retiredAge={retiredAge}
-              setRetiredAge={setRetiredAge}
-              lifeExpectancy={lifeExpectancy}
-              setLifeExpectancy={setLifeExpectancy}
+              currentAge={theData.currentAge}
+              setCurrentAge={(age) =>
+                setTheData((prev) => ({ ...prev, currentAge: age }))
+              }
+              retiredAge={theData.retiredAge}
+              setRetiredAge={(age) =>
+                setTheData((prev) => ({ ...prev, retiredAge: age }))
+              }
+              lifeExpectancy={theData.lifeExpectancy}
+              setLifeExpectancy={(life) =>
+                setTheData((prev) => ({ ...prev, lifeExpectancy: life }))
+              }
             />
             <div className="btns">
-              <BtnYellow text="Next" />
+              <BtnYellow
+                text="Next"
+                onClick={() => handleSectionChange("understandingYourFinances")}
+              />
             </div>
-          </div>
-          <div
-            style={{ display: "none", flexDirection: "column", gap: "50px" }}
+          </section>
+
+          <section
+            id="understandingYourFinances"
+            style={{
+              display:
+                activeSection === "understandingYourFinances" ? "flex" : "none",
+              flexDirection: "column",
+              gap: "50px",
+              marginBottom: "100px",
+            }}
           >
             <h2
               style={{
@@ -88,53 +107,68 @@ const App = () => {
               Step 2: Understanding Your Finances
             </h2>
             <MoneyInput
-              expectedMonthlyExpense={expectedMonthlyExpense}
-              setExpectedMonthlyExpense={setExpectedMonthlyExpense}
-              currentGrossIncome={currentGrossIncome}
-              setCurrentGrossIncome={setCurrentGrossIncome}
-              currentEPF={currentEPF}
-              setCurrentEPF={setCurrentEPF}
-              currentSavings={currentSavings}
-              setCurrentSavings={setCurrentSavings}
+              currentGrossIncome={theData.currentGrossIncome}
+              setCurrentGrossIncome={(income) =>
+                setTheData((prev) => ({ ...prev, currentGrossIncome: income }))
+              }
+              currentEPF={theData.currentEPF}
+              setCurrentEPF={(epf) =>
+                setTheData((prev) => ({ ...prev, currentEPF: epf }))
+              }
+              currentSavings={theData.currentSavings}
+              setCurrentSavings={(savings) =>
+                setTheData((prev) => ({ ...prev, currentSavings: savings }))
+              }
+              averageSavingsInvestment={theData.averageSavingsInvestment}
+              setAverageSavingsInvestment={(investment) =>
+                setTheData((prev) => ({
+                  ...prev,
+                  averageSavingsInvestment: investment,
+                }))
+              }
             />
-            <ExpectedMonthlyExpense />
-            {/* <PercentageInput
-            savingsRate={savingsRate}
-            setSavingsRate={setSavingsRate}
-            preInvestmentReturn={preInvestmentReturn}
-            setPreInvestmentReturn={setPreInvestmentReturn}
-            postInvestmentReturn={postInvestmentReturn}
-            setPostInvestmentReturn={setPostInvestmentReturn}
-          /> */}
+            <ExpectedMonthlyExpense
+              expectedMonthlyExpense={theData.expectedMonthlyExpense}
+              setExpectedMonthlyExpense={(expense) =>
+                setTheData((prev) => ({
+                  ...prev,
+                  expectedMonthlyExpense: expense,
+                }))
+              }
+            />
             <div className="btns">
-              <BtnOutline text="Go Back" />
-              <BtnYellow text="Next: Your Savings & Retirement Plan" />
+              <BtnOutline
+                text="Go Back"
+                onClick={() => handleSectionChange("gettingToKnowYou")}
+              />
+              <BtnYellow
+                text="Next: Your Savings & Retirement Plan"
+                onClick={() => handleSectionChange("summary")}
+              />
             </div>
-          </div>
-          <div style={{ display: "none" }}>
+          </section>
+
+          <section
+            id="summary"
+            style={{ display: activeSection === "summary" ? "block" : "none" }}
+          >
             <div>
-              <Conclusion />
-              {/* <EstimatedAmt
-            retirementGoal={retirementGoal}
-            setRetirementGoal={setRetirementGoal}
-          />
-          <TotalAccumulated
-            retiredAge={retiredAge}
-            projectedSaving={projectedSaving}
-            shortAmt={shortAmt}
-            saveMonthly={saveMonthly}
-          />
-          <BtnYellow text="Recalculate" />
-          <TotalAccumulatedDetails
-            retirementGoal={retirementGoal}
-            currentSavings={currentSavings}
-            projectedSaving={projectedSaving}
-            shortAmt={shortAmt}
-          /> */}
+              <Conclusion
+                retiredAge={theData.retiredAge}
+                adjustedInvestmentGrowthRate={
+                  theData.adjustedInvestmentGrowthRate
+                }
+                setAdjustedInvestmentGrowthRate={(rate) =>
+                  setTheData((prev) => ({
+                    ...prev,
+                    adjustedInvestmentGrowthRate: rate,
+                  }))
+                }
+              />
               <Recommendations />
             </div>
             <EmailReport />
-          </div>
+          </section>
         </div>
       </main>
       <Footer />

@@ -3,20 +3,16 @@ import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./MoneyInput.module.css";
 
 const MoneyInput = ({
-  expectedMonthlyExpense,
-  setExpectedMonthlyExpense,
   currentGrossIncome,
   setCurrentGrossIncome,
   currentEPF,
   setCurrentEPF,
   currentSavings,
   setCurrentSavings,
+  averageSavingsInvestment,
+  setAverageSavingsInvestment,
 }) => {
   // Handler functions for input changes
-  const handleExpectedMonthlyExpenseChange = (e) => {
-    setExpectedMonthlyExpense(Number(e.target.value));
-  };
-
   const handleCurrentGrossIncomeChange = (e) => {
     setCurrentGrossIncome(Number(e.target.value));
   };
@@ -27,6 +23,9 @@ const MoneyInput = ({
 
   const handleCurrentSavingsChange = (e) => {
     setCurrentSavings(Number(e.target.value));
+  };
+  const handleAverageSavingsInvestment = (e) => {
+    setAverageSavingsInvestment(Number(e.target.value));
   };
 
   return (
@@ -135,12 +134,12 @@ const MoneyInput = ({
               id=""
               min="0"
               max="100"
-              // value={averageSavingsInvestment}
-              value="3.9"
-              // onChange={handleAverageSavingsInvestment}
-              // style={{
-              //   background: `linear-gradient(to right, var(--yellow) ${averageSavingsInvestment}%, #F7F8FF ${averageSavingsInvestment}%)`,
-              // }}
+              step={0.01}
+              value={averageSavingsInvestment}
+              onChange={handleAverageSavingsInvestment}
+              style={{
+                background: `linear-gradient(to right, var(--yellow) ${averageSavingsInvestment}%, #F7F8FF ${averageSavingsInvestment}%)`,
+              }}
             />
             <input
               className={css.rangeNumberInput}
@@ -149,8 +148,9 @@ const MoneyInput = ({
               id=""
               min="0"
               max="100"
-              // value={averageSavingsInvestment}
-              // onChange={handleAverageSavingsInvestment}
+              step={0.01}
+              value={averageSavingsInvestment}
+              onChange={handleAverageSavingsInvestment}
             />
           </div>
         </div>

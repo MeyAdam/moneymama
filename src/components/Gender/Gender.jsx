@@ -10,7 +10,7 @@ const Gender = ({ selectedGender, setSelectedGender }) => {
   };
 
   return (
-    <section className={css.sectionGender}>
+    <div className={css.sectionGender}>
       <WrapperWhite className={css.wrapperGender}>
         <h3>What's your gender?</h3>
         <div className={css.wrapperGenderChoice}>
@@ -34,7 +34,7 @@ const Gender = ({ selectedGender, setSelectedGender }) => {
           </div>
         </div>
       </WrapperWhite>
-    </section>
+    </div>
   );
 };
 

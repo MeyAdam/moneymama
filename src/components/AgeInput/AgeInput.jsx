@@ -21,7 +21,7 @@ const AgeInput = ({
   };
 
   return (
-    <section className={css.sectionAgeInput}>
+    <div className={css.sectionAgeInput}>
       <WrapperWhite className={css.wrapperAgeInput}>
         <div className={css.wrapperAges}>
           <h3>Your current age</h3>
@@ -117,7 +117,7 @@ const AgeInput = ({
           </div>
         </div>
       </WrapperWhite>
-    </section>
+    </div>
   );
 };
 

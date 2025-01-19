@@ -32,6 +32,10 @@ img {
     transition: all;
 }
 
+.gender.selected img {
+    width: 100%;
+}
+
 .gender p {
     font-weight: 600;
 }

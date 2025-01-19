@@ -2,7 +2,14 @@ import React from "react";
 import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./ExpectedMonthlyExpense.module.css";
 
-const ExpectedMonthlyExpense = () => {
+const ExpectedMonthlyExpense = ({
+  expectedMonthlyExpense,
+  setExpectedMonthlyExpense,
+}) => {
+  const handleExpectedMonthlyExpenseChange = (e) => {
+    setExpectedMonthlyExpense(Number(e.target.value));
+  };
+
   return (
     <section className={css.sectionExpectedMonthlyExpense}>
       <WrapperWhite className={css.wrapperExpectedMonthlyExpense}>
@@ -28,10 +35,8 @@ const ExpectedMonthlyExpense = () => {
               type="number"
               name="expectedMonthlyExpense"
               min="0"
-              step={0.01}
-              //   value={expectedMonthlyExpense}
-              value="3500"
-              //   onChange={handleExpectedMonthlyExpenseChange}
+              value={expectedMonthlyExpense}
+              onChange={handleExpectedMonthlyExpenseChange}
             />
           </div>
         </div>

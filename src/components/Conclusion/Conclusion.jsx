@@ -1,7 +1,15 @@
 import React from "react";
 import css from "./Conclusion.module.css";
 
-const Conclusion = () => {
+const Conclusion = ({
+  retiredAge,
+  adjustedInvestmentGrowthRate,
+  setAdjustedInvestmentGrowthRate,
+}) => {
+  const handleAdjustedInvestmentGrowthRateChange = (e) => {
+    setAdjustedInvestmentGrowthRate(Number(e.target.value));
+  };
+
   return (
     <section className={css.sectionConclusion}>
       <div className={css.wrapperConclusions}>
@@ -9,12 +17,12 @@ const Conclusion = () => {
           <div className={css.wrapperRetirementGoal}>
             <p className={css.text}>Your retirement goal</p>
             <p className={css.amount}>RM1600001</p>
-            <p className={css.text}>to retire at 60 years old</p>
+            <p className={css.text}>to retire at {retiredAge} years old</p>
           </div>
           <div className={css.wrapperMonthlySave}>
             <p className={css.text}>You need to save</p>
             <p className={css.amount}>RM1200/month</p>
-            <p className={css.text}>to retire at 60 years old</p>
+            <p className={css.text}>to retire at {retiredAge} years old</p>
           </div>
         </div>
 
@@ -32,12 +40,12 @@ const Conclusion = () => {
                 id=""
                 min="0"
                 max="100"
-                // value={adjustedInvestmentGrowthRate}
-                value="3.12"
-                // onChange={handleAgeChange}
-                // style={{
-                //   background: `linear-gradient(to right, var(--yellow) ${adjustedInvestmentGrowthRate}%, #F7F8FF ${adjustedInvestmentGrowthRate}%)`,
-                // }}
+                step={0.01}
+                value={adjustedInvestmentGrowthRate}
+                onChange={handleAdjustedInvestmentGrowthRateChange}
+                style={{
+                  background: `linear-gradient(to right, var(--yellow) ${adjustedInvestmentGrowthRate}%, #F7F8FF ${adjustedInvestmentGrowthRate}%)`,
+                }}
               />
               <input
                 className={css.numberInput}
@@ -46,12 +54,18 @@ const Conclusion = () => {
                 id=""
                 min="0"
                 max="100"
-                // value={adjustedInvestmentGrowthRate}
-                value="3.12"
-                // onChange={handleAgeChange}
+                step={0.01}
+                value={adjustedInvestmentGrowthRate}
+                onChange={handleAdjustedInvestmentGrowthRateChange}
               />
             </div>
-            <p style={{ color: "var(--grey01)", textAlign: "center", fontSize: "12px" }}>
+            <p
+              style={{
+                color: "var(--grey01)",
+                textAlign: "center",
+                fontSize: "12px",
+              }}
+            >
               You'll need to save{" "}
               <span style={{ fontWeight: "bold", color: "var(--black)" }}>
                 RM1,200

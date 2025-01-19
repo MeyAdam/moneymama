@@ -7,6 +7,10 @@
   font-family: "Plus Jakarta Sans", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #F7F8FA;
 }

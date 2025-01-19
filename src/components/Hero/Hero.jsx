@@ -17,7 +17,7 @@ const Hero = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam
         </p>
-        <BtnYellow text="Start Now" theLink={"#getting-to-know-you"} />
+        <BtnYellow text="Start Now" theLink={"#gettingToKnowYou"} />
       </div>
     </section>
   );
