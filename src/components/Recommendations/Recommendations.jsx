@@ -67,9 +67,9 @@ const Recommendations = () => {
               <BtnYellow text="Schedule a free consultation" />
             </div>
 
-            <img src={imgLicensedAdvisor} alt="licensed advisor" className={css.licensedAdvisor} />
-            {/* <div >
-            </div> */}
+            <div className={css.licensedAdvisor}>
+              <img src={imgLicensedAdvisor} alt="licensed advisor" />
+            </div>
           </div>
         </div>
       </div>

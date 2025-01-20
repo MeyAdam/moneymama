@@ -78,12 +78,15 @@ ul li:not(:last-child) {
 }
 
 .licensedAdvisor {
-    width: 100%;
+    display: flex;
+}
+
+.licensedAdvisor img {
     border-radius: 0 0 28px 28px;
 }
 
 @media (min-width: 768px) {
-    
+
     .text {
         padding: 50px 20px 0 50px;
     }
@@ -94,6 +97,9 @@ ul li:not(:last-child) {
 
     .licensedAdvisor {
         height: 300px;
+    }
+
+    .licensedAdvisor img {
         object-fit: cover;
         object-position: 50% -130px;
     }
@@ -104,31 +110,36 @@ ul li:not(:last-child) {
         margin-top: 100px;
     }
 
+    .wrapperRecommendations {
+        width: 830px;
+    }
+
     .recommendation {
-        width: 90%;
-        margin: auto;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
 
     .text {
+        width: 60%;
         padding: 50px 0 50px 50px;
     }
 
     .percentage {
-        width: 400px;
+        width: 40%;
         border-radius: 0 28px 28px 0;
     }
 
     .licensedAdvisorText {
-        max-width: 600px;
+        width: 60%;
     }
 
     .licensedAdvisor {
-        height: unset;
-        width: 400px;
-        object-position: center;
+        width: 40%;
+    }
+
+    .licensedAdvisor img {
+        object-position: unset;
         border-radius: 0 28px 28px 0;
     }
 }

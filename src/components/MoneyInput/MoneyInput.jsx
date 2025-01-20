@@ -70,7 +70,7 @@ const MoneyInput = ({
                 marginTop: "10px",
               }}
             >
-              Your total amount saved in your EPF account. Check here.
+              Your total amount saved in your EPF account. Check <a href="https://iakaun.kwsp.gov.my/portal/member/login" style={{color: "var(--blue)", textDecoration: "underline"}}>here</a>.
             </p>
           </div>
           <div className={css.wrapperInputGroup}>
