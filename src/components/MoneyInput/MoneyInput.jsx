@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ModalAverageSavingsInvestment from "../ModalAverageSavingsInvestment/ModalAverageSavingsInvestment";
 import WrapperWhite from "../WrapperWhite/WrapperWhite";
 import css from "./MoneyInput.module.css";
 
@@ -12,20 +13,27 @@ const MoneyInput = ({
   averageSavingsInvestment,
   setAverageSavingsInvestment,
 }) => {
-  // Handler functions for input changes
-  const handleCurrentGrossIncomeChange = (e) => {
-    setCurrentGrossIncome(Number(e.target.value));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Handlers for input changes with formatting
+  const handleFormattedChange = (setter) => (e) => {
+    const value = e.target.value.replace(/,/g, ""); // remove commas
+    const numericValue = parseFloat(value) || 0; // convert to number to insert into sessionStorage
+    setter(numericValue); // update
   };
 
-  const handleCurrentEPFChange = (e) => {
-    setCurrentEPF(Number(e.target.value));
-  };
+  const formatNumber = (number) => number.toLocaleString("en-US");
 
-  const handleCurrentSavingsChange = (e) => {
-    setCurrentSavings(Number(e.target.value));
-  };
   const handleAverageSavingsInvestment = (e) => {
     setAverageSavingsInvestment(Number(e.target.value));
+  };
+
+  const handleAverageSavingsInvestmentClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -49,12 +57,10 @@ const MoneyInput = ({
             <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
-              type="number"
+              type="text"
               name="currentGrossIncome"
-              min="0"
-              step={0.01}
-              value={currentGrossIncome}
-              onChange={handleCurrentGrossIncomeChange}
+              value={formatNumber(currentGrossIncome)}
+              onChange={handleFormattedChange(setCurrentGrossIncome)}
             />
           </div>
         </div>
@@ -70,19 +76,24 @@ const MoneyInput = ({
                 marginTop: "10px",
               }}
             >
-              Your total amount saved in your EPF account. Check <a href="https://iakaun.kwsp.gov.my/portal/member/login" style={{color: "var(--blue)", textDecoration: "underline"}}>here</a>.
+              Your total amount saved in your EPF account. Check{" "}
+              <a
+                href="https://iakaun.kwsp.gov.my/portal/member/login"
+                style={{ color: "var(--blue)", textDecoration: "underline" }}
+              >
+                here
+              </a>
+              .
             </p>
           </div>
           <div className={css.wrapperInputGroup}>
             <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
-              type="number"
+              type="text"
               name="currentEPF"
-              min="0"
-              step={0.01}
-              value={currentEPF}
-              onChange={handleCurrentEPFChange}
+              value={formatNumber(currentEPF)}
+              onChange={handleFormattedChange(setCurrentEPF)}
             />
           </div>
         </div>
@@ -101,12 +112,10 @@ const MoneyInput = ({
             <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
-              type="number"
+              type="text"
               name="currentSavings"
-              min="0"
-              step={0.01}
-              value={currentSavings}
-              onChange={handleCurrentSavingsChange}
+              value={formatNumber(currentSavings)}
+              onChange={handleFormattedChange(setCurrentSavings)}
             />
           </div>
         </div>
@@ -124,7 +133,13 @@ const MoneyInput = ({
             }}
           >
             The percentage increase of your total savings and investments over
-            time <span className={css.circleQuestion}>?</span>
+            time{" "}
+            <span
+              className={css.circleQuestion}
+              onClick={handleAverageSavingsInvestmentClick}
+            >
+              ?
+            </span>
           </p>
           <div className={css.wrapperInputValue}>
             <input
@@ -155,6 +170,10 @@ const MoneyInput = ({
           </div>
         </div>
       </WrapperWhite>
+      <ModalAverageSavingsInvestment
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   );
 };

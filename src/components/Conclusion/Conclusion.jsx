@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import ModalAdjustedInvestmentGrowthRate from "../ModalAdjustedInvestmentGrowthRate/ModalAdjustedInvestmentGrowthRate";
 import css from "./Conclusion.module.css";
 
 const Conclusion = ({
   retiredAge,
   adjustedInvestmentGrowthRate,
   setAdjustedInvestmentGrowthRate,
+  retirementGoal,
+  monthlySaving,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Helper function to format numbers with thousand commas
+  const formatNumber = (number) => {
+    if (number === "" || isNaN(number)) return "";
+    return parseFloat(number).toLocaleString("en-US");
+  };
+
   const handleAdjustedInvestmentGrowthRateChange = (e) => {
     setAdjustedInvestmentGrowthRate(Number(e.target.value));
+  };
+
+  const handleAdjustedInvestmentGrowthRateClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -16,12 +35,12 @@ const Conclusion = ({
         <div className={css.wrapper1}>
           <div className={css.wrapperRetirementGoal}>
             <p className={css.text}>Your retirement goal</p>
-            <p className={css.amount}>RM1600001</p>
+            <p className={css.amount}>RM{formatNumber(retirementGoal)}</p>
             <p className={css.text}>to retire at {retiredAge} years old</p>
           </div>
           <div className={css.wrapperMonthlySave}>
             <p className={css.text}>You need to save</p>
-            <p className={css.amount}>RM1200/month</p>
+            <p className={css.amount}>RM{formatNumber(monthlySaving)}/month</p>
             <p className={css.text}>to retire at {retiredAge} years old</p>
           </div>
         </div>
@@ -74,9 +93,19 @@ const Conclusion = ({
               <span style={{ fontWeight: "bold", color: "var(--black)" }}>
                 3.12%
               </span>{" "}
-              to achieve your goal.
+              to achieve your goal.{" "}
+              <span
+                className={css.circleQuestion}
+                onClick={handleAdjustedInvestmentGrowthRateClick}
+              >
+                ?
+              </span>
             </p>
           </div>
+          <ModalAdjustedInvestmentGrowthRate
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+          />
         </div>
       </div>
     </section>

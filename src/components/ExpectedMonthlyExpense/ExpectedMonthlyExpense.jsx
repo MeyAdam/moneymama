@@ -6,8 +6,24 @@ const ExpectedMonthlyExpense = ({
   expectedMonthlyExpense,
   setExpectedMonthlyExpense,
 }) => {
+  // format the number with thousand commas
+  const formatNumber = (number) => {
+    if (number === "" || isNaN(number)) return "";
+    return parseFloat(number).toLocaleString("en-US");
+  };
+
+  // parse the input value (removing commas)
+  const parseNumber = (value) => {
+    return value.replace(/,/g, "");
+  };
+
+  // Handler for the input change
   const handleExpectedMonthlyExpenseChange = (e) => {
-    setExpectedMonthlyExpense(Number(e.target.value));
+    const value = e.target.value;
+    const numericValue = parseNumber(value);
+    if (!isNaN(numericValue)) {
+      setExpectedMonthlyExpense(parseFloat(numericValue));
+    }
   };
 
   return (
@@ -32,10 +48,9 @@ const ExpectedMonthlyExpense = ({
             <p className={css.inputGroupText}>RM</p>
             <input
               className={css.numberInput}
-              type="number"
+              type="text"
               name="expectedMonthlyExpense"
-              min="0"
-              value={expectedMonthlyExpense}
+              value={formatNumber(expectedMonthlyExpense)} // Display
               onChange={handleExpectedMonthlyExpenseChange}
             />
           </div>
