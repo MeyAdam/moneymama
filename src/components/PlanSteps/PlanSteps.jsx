@@ -3,7 +3,13 @@ import React from "react";
 import { FaCheck } from "react-icons/fa";
 import css from "./PlanSteps.module.css";
 
-const PlanSteps = () => {
+const steps = [
+  { id: "gettingToKnowYou", label: "1" },
+  { id: "understandingYourFinances", label: "2" },
+  { id: "summary", label: <FaCheck /> },
+];
+
+const PlanSteps = ({ activeSection }) => {
   return (
     <section className={css.sectionPlanSteps}>
       <div className={css.wrapperPlanSteps}>
@@ -15,15 +21,22 @@ const PlanSteps = () => {
           </p>
         </div>
         <div className={css.wrapperSteps}>
-          <div className={classNames(css.step, css.active)}>
-            <p>1</p>
-          </div>
-          <div className={css.step}>
-            <p>2</p>
-          </div>
-          <div className={css.step}>
-            <FaCheck />
-          </div>
+          {steps.map((step, index) => {
+            // Check if the step is active or a previous step
+            const isActive =
+              steps.findIndex((s) => s.id === activeSection) >= index;
+
+            return (
+              <div
+                key={step.id}
+                className={classNames(css.step, {
+                  [css.active]: isActive,
+                })}
+              >
+                <p>{step.label}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
