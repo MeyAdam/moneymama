@@ -33,14 +33,65 @@ const App = () => {
           averageSavingsInvestment: 3.9,
           expectedMonthlyExpense: 3500,
           adjustedInvestmentGrowthRate: 3.12,
+          retirementDuration: null,
+          retirementGoal: null,
+          monthlySaving: null,
         };
   });
-  console.log("theData", theData);
+  // console.log("theData", theData);
 
+  // Recalculate retirementDuration whenever retiredAge or lifeExpectancy changes
+  useEffect(() => {
+    const newRetirementDuration = theData.lifeExpectancy - theData.retiredAge;
+    setTheData((prev) => ({
+      ...prev,
+      retirementDuration: newRetirementDuration,
+    }));
+  }, [theData.retiredAge, theData.lifeExpectancy]);
+
+  // calculate the retimerement goal
+  useEffect(() => {
+    const retirementGoal =
+      theData.expectedMonthlyExpense * 12 * theData.retirementDuration;
+    setTheData((prev) => ({
+      ...prev,
+      retirementGoal: retirementGoal,
+    }));
+  }, [theData.retirementDuration, theData.expectedMonthlyExpense]);
+
+  // calculate monthly saving
+  useEffect(() => {
+    const monthlyRate = theData.averageSavingsInvestment / 100 / 12; // Convert to monthly rate
+    const monthsUntilRetirement =
+      (theData.retiredAge - theData.currentAge) * 12; // Total months until retirement
+    if (monthlyRate > 0 && monthsUntilRetirement > 0) {
+      const monthlySaving =
+        (theData.retirementGoal * monthlyRate) /
+        (Math.pow(1 + monthlyRate, monthsUntilRetirement) - 1);
+
+      setTheData((prev) => ({
+        ...prev,
+        monthlySaving: monthlySaving.toFixed(2), // Store monthly saving, round to 2 decimal places
+      }));
+    } else {
+      setTheData((prev) => ({
+        ...prev,
+        monthlySaving: 0,
+      }));
+    }
+  }, [
+    theData.retirementGoal,
+    theData.averageSavingsInvestment,
+    theData.retiredAge,
+    theData.currentAge,
+  ]);
+
+  // Save the data to sessionStorage
   useEffect(() => {
     sessionStorage.setItem("theData", JSON.stringify(theData));
   }, [theData]);
 
+  // Save the activeSection to sessionStorage
   useEffect(() => {
     sessionStorage.setItem("activeSection", activeSection);
   }, [activeSection]);
@@ -182,6 +233,8 @@ const App = () => {
                     adjustedInvestmentGrowthRate: rate,
                   }))
                 }
+                retirementGoal={theData.retirementGoal}
+                monthlySaving={theData.monthlySaving}
               />
               <Recommendations />
             </div>
