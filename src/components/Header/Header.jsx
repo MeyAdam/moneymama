@@ -4,17 +4,21 @@ import logo from "../../assets/MONEYMAMA-logo.svg";
 import css from "./Header.module.css";
 import classNames from "classnames";
 
-const Header = () => {
+const Header = ({ setActiveSection }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLogoClick = () => {
+    setActiveSection("gettingToKnowYou");
+  };
+
   return (
     <header className={css.header}>
       <div className={css.wrapper}>
-        <a href="/" style={{ display: "flex" }}>
+        <a href="/" style={{ display: "flex" }} onClick={handleLogoClick}>
           <img src={logo} alt="logo" className={css.logo} />
         </a>
         <div

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AgeInput from "./components/AgeInput/AgeInput";
 import BtnOutline from "./components/BtnOutline/BtnOutline";
 import BtnYellow from "./components/BtnYellow/BtnYellow";
@@ -14,21 +14,36 @@ import PlanSteps from "./components/PlanSteps/PlanSteps";
 import Recommendations from "./components/Recommendations/Recommendations";
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState("gettingToKnowYou");
+  const [activeSection, setActiveSection] = useState(
+    () => sessionStorage.getItem("activeSection") || "gettingToKnowYou"
+  );
 
-  const [theData, setTheData] = useState({
-    selectedGender: null,
-    currentAge: 25,
-    retiredAge: 55,
-    lifeExpectancy: 80,
-    currentGrossIncome: 8350,
-    currentEPF: 44500,
-    currentSavings: 3500,
-    averageSavingsInvestment: 3.9,
-    expectedMonthlyExpense: 3500,
-    adjustedInvestmentGrowthRate: 3.12,
+  const [theData, setTheData] = useState(() => {
+    const storedData = sessionStorage.getItem("theData");
+    return storedData
+      ? JSON.parse(storedData)
+      : {
+          selectedGender: null,
+          currentAge: 25,
+          retiredAge: 55,
+          lifeExpectancy: 80,
+          currentGrossIncome: 8350,
+          currentEPF: 44500,
+          currentSavings: 3500,
+          averageSavingsInvestment: 3.9,
+          expectedMonthlyExpense: 3500,
+          adjustedInvestmentGrowthRate: 3.12,
+        };
   });
   console.log("theData", theData);
+
+  useEffect(() => {
+    sessionStorage.setItem("theData", JSON.stringify(theData));
+  }, [theData]);
+
+  useEffect(() => {
+    sessionStorage.setItem("activeSection", activeSection);
+  }, [activeSection]);
 
   const handleSectionChange = (sectionId) => {
     setActiveSection(sectionId);
@@ -36,10 +51,13 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header setActiveSection={setActiveSection} />
       <main>
-        <Hero />
-        <PlanSteps />
+        <Hero
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
+        <PlanSteps activeSection={activeSection} />
         <div style={{ marginTop: "100px" }}>
           <section
             id="gettingToKnowYou"
