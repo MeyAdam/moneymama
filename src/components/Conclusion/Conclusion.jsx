@@ -4,8 +4,8 @@ import css from "./Conclusion.module.css";
 
 const Conclusion = ({
   retiredAge,
-  adjustedInvestmentGrowthRate,
-  setAdjustedInvestmentGrowthRate,
+  averageSavingsInvestment,
+  setAverageSavingsInvestment,
   retirementGoal,
   monthlySaving,
 }) => {
@@ -17,8 +17,8 @@ const Conclusion = ({
     return parseFloat(number).toLocaleString("en-US");
   };
 
-  const handleAdjustedInvestmentGrowthRateChange = (e) => {
-    setAdjustedInvestmentGrowthRate(Number(e.target.value));
+  const handleAverageSavingsInvestment = (e) => {
+    setAverageSavingsInvestment(Number(e.target.value));
   };
 
   const handleAdjustedInvestmentGrowthRateClick = () => {
@@ -55,27 +55,27 @@ const Conclusion = ({
               <input
                 className={css.rangeInput}
                 type="range"
-                name="adjustedInvestmentGrowthRate"
+                name="averageSavingsInvestment"
                 id=""
                 min="0"
                 max="100"
                 step={0.01}
-                value={adjustedInvestmentGrowthRate}
-                onChange={handleAdjustedInvestmentGrowthRateChange}
+                value={averageSavingsInvestment}
+                onChange={handleAverageSavingsInvestment}
                 style={{
-                  background: `linear-gradient(to right, var(--yellow) ${adjustedInvestmentGrowthRate}%, #F7F8FF ${adjustedInvestmentGrowthRate}%)`,
+                  background: `linear-gradient(to right, var(--yellow) ${averageSavingsInvestment}%, #F7F8FF ${averageSavingsInvestment}%)`,
                 }}
               />
               <input
                 className={css.numberInput}
                 type="number"
-                name="adjustedInvestmentGrowthRate"
+                name="averageSavingsInvestment"
                 id=""
                 min="0"
                 max="100"
                 step={0.01}
-                value={adjustedInvestmentGrowthRate}
-                onChange={handleAdjustedInvestmentGrowthRateChange}
+                value={averageSavingsInvestment}
+                onChange={handleAverageSavingsInvestment}
               />
             </div>
             <p
@@ -87,11 +87,11 @@ const Conclusion = ({
             >
               You'll need to save{" "}
               <span style={{ fontWeight: "bold", color: "var(--black)" }}>
-                RM1,200
+                RM{monthlySaving}
               </span>{" "}
               monthly at an investment growth rate of{" "}
               <span style={{ fontWeight: "bold", color: "var(--black)" }}>
-                3.12%
+                {averageSavingsInvestment}%
               </span>{" "}
               to achieve your goal.{" "}
               <span

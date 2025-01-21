@@ -143,10 +143,3 @@ ul li:not(:last-child) {
         border-radius: 0 28px 28px 0;
     }
 }
-
-@media (min-width: 1920px) {
-    .recommendation {
-        width: 60%;
-        margin: auto;
-    }
-}

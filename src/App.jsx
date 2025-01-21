@@ -32,7 +32,6 @@ const App = () => {
           currentSavings: 3500,
           averageSavingsInvestment: 3.9,
           expectedMonthlyExpense: 3500,
-          adjustedInvestmentGrowthRate: 3.12,
           retirementDuration: null,
           retirementGoal: null,
           monthlySaving: null,
@@ -224,13 +223,11 @@ const App = () => {
             <div>
               <Conclusion
                 retiredAge={theData.retiredAge}
-                adjustedInvestmentGrowthRate={
-                  theData.adjustedInvestmentGrowthRate
-                }
-                setAdjustedInvestmentGrowthRate={(rate) =>
+                averageSavingsInvestment={theData.averageSavingsInvestment}
+                setAverageSavingsInvestment={(investment) =>
                   setTheData((prev) => ({
                     ...prev,
-                    adjustedInvestmentGrowthRate: rate,
+                    averageSavingsInvestment: investment,
                   }))
                 }
                 retirementGoal={theData.retirementGoal}
